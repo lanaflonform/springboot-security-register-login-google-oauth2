@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dongle?serverTimezone=Asia/Seoul
+    username: dongle
+    password: dongle
+    
+#  mvc:
+#    view:
+#      prefix: /templates/
+#      suffix: .mustache
+
+  jpa:
+    hibernate:
+      ddl-auto: update #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 641955307201-n0hg0hls0epgdvd3lkdjml5s69l92tnv.apps.googleusercontent.com
+            client-secret: xPo_8LtLcHrTpdagz0ZizVs3
+            scope:
+            - email
+            - profile
+          
